@@ -1,7 +1,6 @@
 import Link from "next/link";
-import { Logo } from "@/components/navigation/logo";
 import { LuArrowUpRight, LuGithub } from "react-icons/lu";
-
+import { FaHome } from "react-icons/fa"; // Example icon from react-icons
 import { ModeToggle } from "@/components/navigation/theme-toggle";
 import { SheetLeft } from "@/components/navigation/sidebar";
 import Search from "@/components/navigation/search";
@@ -18,7 +17,8 @@ export function Navbar() {
           <SheetLeft />
           <div className="flex items-center gap-6">
             <div className="hidden md:flex">
-              <Logo />
+              {/* Replace Logo with an Icon */}
+              <FaHome className="w-8 h-8 text-primary" aria-label="Home" />
             </div>
             <div className="hidden md:flex items-center gap-5 text-sm font-medium text-muted-foreground">
               <NavMenu />
