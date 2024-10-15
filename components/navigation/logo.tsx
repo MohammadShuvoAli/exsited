@@ -13,7 +13,7 @@ export function Logo() {
           loading="lazy"
           decoding="async"
         />
-        <h1 className="text-md font-semibold">{Settings.title}</h1>
+        {/* <h1 className="text-md font-semibold">{Settings.title}</h1> */}
       </Link>
     );
 }
