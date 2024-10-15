@@ -68,6 +68,46 @@ Here are some of the features that make **Documents** ideal for building your do
 
 ## How to Use These Documents
 
+<Tabs defaultValue="js" className="pt-5 pb-1">
+  <TabsList className="">
+    <TabsTrigger value="js">layout.jsx</TabsTrigger>
+    <TabsTrigger value="ts">layout.tsx</TabsTrigger>
+  </TabsList>
+  <TabsContent value="js">
+  ```jsx {7} showLineNumbers
+import ThemeProvider from './theme-provider'
+ 
+export default function RootLayout({ children }) {
+  return (
+    <html>
+      <body className="container">
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
+    </html>
+  )}
+````
+  </TabsContent>
+  <TabsContent value="ts">
+```tsx {11} showLineNumbers
+import ThemeProvider from './theme-provider'
+ 
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <html>
+      <body className="container">
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
+    </html>
+  )
+}
+```
+  </TabsContent>
+</Tabs>
+
 You'll find the documentation's navigation bar on the left side of the screen. The pages are organized in a logical sequence, progressing from foundational 
 topics to more advanced concepts, allowing you to follow along step-by-step as you build your documentation. However, feel free to explore the content in 
 any order, selecting the sections most relevant to your use case.
