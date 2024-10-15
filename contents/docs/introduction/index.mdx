@@ -63,39 +63,40 @@ The Exsited SDK offers a range of features that enhance payment processing:
 
 <Tabs defaultValue="js" className="pt-5 pb-1">
   <TabsList className="">
-    <TabsTrigger value="python">config.py</TabsTrigger>
-    <TabsTrigger value="php">config.php</TabsTrigger>
+    <TabsTrigger value="js">layout.jsx</TabsTrigger>
+    <TabsTrigger value="ts">layout.tsx</TabsTrigger>
   </TabsList>
-  <TabsContent value="python">
-```python {12} showLineNumbers
-response = sdk.process_payment({
-    'amount': 1000,  # Amount in cents
-    'currency': 'USD',
-    'method': 'credit_card',
-    'card_details': {
-        'number': '4111111111111111',
-        'expiry': '12/23',
-        'cvv': '123',
-    },
-})
-
-print('Payment Successful:', response)
+  <TabsContent value="js">
+  ```jsx {7} showLineNumbers
+import ThemeProvider from './theme-provider'
+ 
+export default function RootLayout({ children }) {
+  return (
+    <html>
+      <body className="container">
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
+    </html>
+  )}
 ````
   </TabsContent>
-  <TabsContent value="php">
-```php {12} showLineNumbers
-response = sdk.process_payment({
-    'amount': 1000,  # Amount in cents
-    'currency': 'USD',
-    'method': 'credit_card',
-    'card_details': {
-        'number': '4111111111111111',
-        'expiry': '12/23',
-        'cvv': '123',
-    },
-})
-
-print('Payment Successful:', response)
+  <TabsContent value="ts">
+```tsx {11} showLineNumbers
+import ThemeProvider from './theme-provider'
+ 
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <html>
+      <body className="container">
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
+    </html>
+  )
+}
 ```
   </TabsContent>
 </Tabs>
