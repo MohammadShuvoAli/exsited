@@ -6,34 +6,32 @@ keywords: ["introduction", "guide", "nextjs", "documents"]
 
 ![Banner](/images/banner.png "Documents")
 
-## Documents
+## Introduction
 
-Welcome to **Documents**, a powerful and flexible Next.js documentation starter kit designed to simplify the process of creating high-quality, comprehensive 
-product documentation, technical manuals, and business guides. Built with **React**, **Tailwind CSS**, and **TypeScript**, this starter kit provides the 
-foundation to build your project documentation and knowledge base.
+Welcome to the **Exsited SDK** documentation, your comprehensive guide to integrating our payment processing platform into your applications. The Exsited SDK is designed to simplify and accelerate the implementation of payment solutions, providing a seamless experience for both developers and users.
 
-Documents was crafted to streamline the creation, management and showcasing of documentation, allowing developers and teams to focus on the content rather 
-than building the underlying structure. This documentation aims to help you get up and running with the kit, exploring the various features and providing 
-insights into how to structure and present your content effectively.
+## Overview
+
+The Exsited SDK empowers developers to easily integrate a variety of payment methods, ensuring secure and efficient transactions. With support for credit cards, digital wallets, and more, our SDK caters to diverse payment needs across multiple platforms.
 
 <CardGrid>
   <Card
     subtitle="Instructions"
     title="Installation"
-    description="Get started with Documents using our quick start installation guide to get your project started."
+    description="Get started with Exsited SDK using our quick start installation guide to get your project started."
     href="/docs/introduction/installation"
   />
   <Card
     subtitle="Setup"
     title="Site Settings"
-    description="Setting up your Documents projects layout, links and search engine optimisation."
+    description="Setup Exsited SDK on your device"
     href="/docs/introduction/setup"
   />
   <Card
     subtitle="Support"
-    title="Rubix Studios"
-    description="Australia's leading branding, marketing and web development company."
-    href="https://www.rubixstudios.com.au/"
+    title="Exsited Team"
+    description="Australia's leading payment processing company."
+    href="https://www.exsited.com"
     external={true}
   />
 </CardGrid>
@@ -51,59 +49,56 @@ The integration of MDX, custom components and Tailwind CSS ensures an intuitive 
 
 Documents offers extensive customization options, allowing you to easily align the design and functionality with your branding.
 
-## Key Features
+### Key Features
 
-Here are some of the features that make **Documents** ideal for building your documentation:
+The Exsited SDK offers a range of features that enhance payment processing:
 
-| Feature                              | Description                                                                                                      |
-|--------------------------------------|------------------------------------------------------------------------------------------------------------------|
-| **Content Creation**                 | Write documentation using Markdown with JSX, custom components and Mermaid.js for diagrams.                      |
-| **Navigation & Structure**           | Organize content with multi-level navigation, automatically generated tables of contents and smooth pagination.  |
-| **Code Features**                    | Syntax highlighting, enhanced code blocks and a code switcher with copy functionality.                           |
-| **Advanced Search**                  | Fuzzy search with term highlighting for quick and accurate results.                                              |
-| **Theming & Layout**                 | Supports light/dark modes with automatic switching and responsive design.                                        |
-| **Math & Tables**                    | Seamless integration of LaTeX for math and structured tables.                                                    |
-| **SEO & Meta Tags**                  | Built-in SEO, metadata generation and control over meta tags for better search rankings and social sharing.      |
-| **AI-powered Docs (In Development)** | Future feature for AI-driven content discussions and search.                                                     |
+| Feature                       | Description                                                             |
+|-------------------------------|-------------------------------------------------------------------------|
+| **Multiple Payment Options**   | Support for credit cards, digital wallets, and bank transfers.          |
+| **Secure Transactions**        | Built-in fraud detection and compliance with industry standards.        |
+| **Easy Integration**           | Quick setup with comprehensive documentation and sample code.          |
+| **Real-Time Analytics**        | Monitor transaction status and performance metrics in real-time.       |
+| **Customizable UI**            | Tailor the payment interface to match your brand’s look and feel.      |
+| **Webhook Support**            | Receive notifications for transaction updates and events.               |
 
-## How to Use These Documents
+## How to configure Exsited SDK
 
 <Tabs defaultValue="js" className="pt-5 pb-1">
   <TabsList className="">
-    <TabsTrigger value="js">layout.jsx</TabsTrigger>
-    <TabsTrigger value="ts">layout.tsx</TabsTrigger>
+    <TabsTrigger value="python">config.py</TabsTrigger>
+    <TabsTrigger value="ts">config.php</TabsTrigger>
   </TabsList>
   <TabsContent value="js">
-  ```jsx {7} showLineNumbers
-import ThemeProvider from './theme-provider'
- 
-export default function RootLayout({ children }) {
-  return (
-    <html>
-      <body className="container">
-        <ThemeProvider>{children}</ThemeProvider>
-      </body>
-    </html>
-  )}
+```python {12} showLineNumbers
+response = sdk.process_payment({
+    'amount': 1000,  # Amount in cents
+    'currency': 'USD',
+    'method': 'credit_card',
+    'card_details': {
+        'number': '4111111111111111',
+        'expiry': '12/23',
+        'cvv': '123',
+    },
+})
+
+print('Payment Successful:', response)
 ````
   </TabsContent>
-  <TabsContent value="ts">
-```tsx {11} showLineNumbers
-import ThemeProvider from './theme-provider'
- 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
-  return (
-    <html>
-      <body className="container">
-        <ThemeProvider>{children}</ThemeProvider>
-      </body>
-    </html>
-  )
-}
+  <TabsContent value="php">
+```php {11} showLineNumbers
+response = sdk.process_payment({
+    'amount': 1000,  # Amount in cents
+    'currency': 'USD',
+    'method': 'credit_card',
+    'card_details': {
+        'number': '4111111111111111',
+        'expiry': '12/23',
+        'cvv': '123',
+    },
+})
+
+print('Payment Successful:', response)
 ```
   </TabsContent>
 </Tabs>
